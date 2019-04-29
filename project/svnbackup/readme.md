@@ -1,6 +1,6 @@
 # [项目](../../readme.md "amxssh")：svnbackup
 
-##背景
+## 背景
 
 SVN有完整备份和增量备份两种情况：
 
@@ -41,7 +41,7 @@ svnadmin load . < C:\nexus-server.svn\dump\WorkSpace-NP21157-21164
 ```
  
 
-##使用
+## 使用
 
 修改json配置文件`svn_backup.json`
 
