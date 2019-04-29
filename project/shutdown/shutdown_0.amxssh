@@ -1,0 +1,12 @@
+amxssh-ftl(){
+	//将ftl模板转换成执行脚本
+	ftl_file("shutdown_pcs.amxssh.ftl", "bin/shutdown_pcs.amxssh", true);
+}
+
+amxssh-call(){
+	//调用执行脚本
+	call_file("bin/shutdown_pcs.amxssh");
+	
+	//删除目录	
+	rm_file("bin");
+}

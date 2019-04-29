@@ -1,0 +1,34 @@
+{
+	"src": {
+		"os": "windows",
+		"ip": "192.168.1.253",
+		"port": "8022",
+		"uid": "administrator",
+		"pwd": "",
+		"dir_root": "e:/Repositories/",
+		"svn_home": "c:/Program Files/TortoiseSVN/",
+		"dir_dump": "d:/svn_dump/"
+	},
+	"dest": {
+		"os": "windows",
+		"ip": "192.168.6.11",
+		"port": "8022",
+		"uid": "administrator",
+		"pwd": "",
+		"dir_root": "c:/nexus-server.svn/Repositories/",
+		"svn_home": "g:/Program Files/TortoiseSVN/",
+		"dir_dump": "c:/nexus-server.svn/svn_dump/"
+	},
+	"dbs": [		
+		"WorkSpace-BASE",
+		"WorkSpace-FACE",
+		"WorkSpace-E",
+		"WorkSpace-IoD",
+		"WorkSpace-A",
+		"WorkSpace-B",
+		"WorkSpace-NP",
+		"Workspace-C",
+		"WorkSpace-D",
+		"WorkX"
+	]
+}

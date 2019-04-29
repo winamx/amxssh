@@ -1,0 +1,20 @@
+
+//注释 内容，目前只支持以"//"开始的行注释，不支持在行尾注释
+
+//建议使用以 "/" 开头的绝对路径，如果使用相对路径 则以脚本文件为相对路径
+
+//for /f %f in ('dir /ad /b /on') do @echo "%f",
+
+//模板解析 包含模板需要的参数名字数量不限
+amxssh-ftl(){
+	ftl_file("svn_backup.ftl", "bin/svn_backup.amxssh", true);
+}
+
+//调用其他脚本
+amxssh-call(){
+	cp_file("svn_backup_item.ftl", "bin");
+	call_file("bin/svn_backup.amxssh");	
+	
+	rm_file("bin");
+}	
+	 

@@ -1,0 +1,23 @@
+[
+	{
+		"os": "windows",
+		"ip": "192.168.1.51",
+		"port": "8022",
+		"uid": "administrator",
+		"pwd": ""
+	},
+	{
+		"os": "windows",
+		"ip": "192.168.1.59",
+		"port": "8022",
+		"uid": "administrator",
+		"pwd": ""
+	},
+	{
+		"os": "linux",
+		"ip": "192.168.1.174",
+		"port": "22",
+		"uid": "root",
+		"pwd": ""
+	}
+]
