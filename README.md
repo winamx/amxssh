@@ -1,0 +1,2 @@
+# amxssh
+amxssh script language
