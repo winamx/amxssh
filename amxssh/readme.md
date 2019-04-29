@@ -1,4 +1,4 @@
-# [amxssh](../readme.md "amxssh")
+# [amxssh](https://github.com/winamx/amxssh "amxssh")
 
 项目AmxSSH定义了一个轻量级的远程操作脚本语言，提供了一种脚本操作远程的途径。
 
