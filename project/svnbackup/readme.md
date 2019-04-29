@@ -1,49 +1,49 @@
-# [ÏîÄ¿](../../readme.md "amxssh")£ºsvnbackup
+# [é¡¹ç›®](https://github.com/winamx/amxssh "amxssh")ï¼šsvnbackup
 
-## ±³¾°
+## èƒŒæ™¯
 
-SVNÓĞÍêÕû±¸·İºÍÔöÁ¿±¸·İÁ½ÖÖÇé¿ö£º
+SVNæœ‰å®Œæ•´å¤‡ä»½å’Œå¢é‡å¤‡ä»½ä¸¤ç§æƒ…å†µï¼š
 
-Ò»¡¢ÍêÕû±¸·İÍ¨³£½×¶ÎĞÔÖ´ĞĞÒ»´Î¡£
+ä¸€ã€å®Œæ•´å¤‡ä»½é€šå¸¸é˜¶æ®µæ€§æ‰§è¡Œä¸€æ¬¡ã€‚
 
-1.1 ¿ÉÄÜÓĞÈËÌá½»´úÂëµÄÇé¿ö¡£svnadmin hotcopy
+1.1 å¯èƒ½æœ‰äººæäº¤ä»£ç çš„æƒ…å†µã€‚svnadmin hotcopy
 mkdir C:\nexus-server.svn\svn_dump\WorkSpace-NP
 svnadmin hotcopy e:\Repositories\WorkSpace-NP C:\nexus-server.svn\svn_dump\WorkSpace-NP
 
-1.2 Ã»ÈËÌá½»´úÂëµÄÇé¿ö¡£xcopy
+1.2 æ²¡äººæäº¤ä»£ç çš„æƒ…å†µã€‚xcopy
 mkdir C:\nexus-server.svn\svn_dump\WorkSpace-NP
 xcopy /e /h e:\Repositories\WorkSpace-NP C:\nexus-server.svn\svn_dump\WorkSpace-NP
 
 
-¶ş¡¢ÔöÁ¿±¸·İÎªÁË±£Ö¤°æ±¾Í¬²½¾­³£Ö´ĞĞ¡£
+äºŒã€å¢é‡å¤‡ä»½ä¸ºäº†ä¿è¯ç‰ˆæœ¬åŒæ­¥ç»å¸¸æ‰§è¡Œã€‚
 
-2.1 ²éÑ¯±¸·İ¿âµÄ°æ±¾
+2.1 æŸ¥è¯¢å¤‡ä»½åº“çš„ç‰ˆæœ¬
 ```bat
 cd /d C:\nexus-server.svn\Repositories\WorkSpace-NP
 svnlook youngest .
 21156
 ```
 
-2.2 ²éÑ¯·şÎñ¿âµÄ°æ±¾
+2.2 æŸ¥è¯¢æœåŠ¡åº“çš„ç‰ˆæœ¬
 ```bat
 cd /d E:\Repositories\WorkSpace-NP
 svnlook youngest .
 21164
 ```
-2.3 ²úÉú±¸·İÎÄ¼ş
+2.3 äº§ç”Ÿå¤‡ä»½æ–‡ä»¶
 ```
 svnadmin dump . -r 21157:21164 --incremental  > x:\svnrootbak\WorkSpace-NP21157-21164
 ```
 
-2.4 ÏÂÔØ±¸·İÎÄ¼ş Ö´ĞĞÔöÁ¿µ¼Èë
+2.4 ä¸‹è½½å¤‡ä»½æ–‡ä»¶ æ‰§è¡Œå¢é‡å¯¼å…¥
 ```
 svnadmin load . < C:\nexus-server.svn\dump\WorkSpace-NP21157-21164
 ```
  
 
-## Ê¹ÓÃ
+## ä½¿ç”¨
 
-ĞŞ¸ÄjsonÅäÖÃÎÄ¼ş`svn_backup.json`
+ä¿®æ”¹jsoné…ç½®æ–‡ä»¶`svn_backup.json`
 
 ```json
 {
@@ -52,7 +52,7 @@ svnadmin load . < C:\nexus-server.svn\dump\WorkSpace-NP21157-21164
 		"ip": "192.168.1.253",
 		"port": "8022",
 		"uid": "administrator",
-		"pwd": "ÃÜÂë",
+		"pwd": "å¯†ç ",
 		"dir_root": "e:/Repositories/",
 		"svn_home": "c:/Program Files/TortoiseSVN/",
 		"dir_dump": "d:/svn_dump/"
@@ -62,7 +62,7 @@ svnadmin load . < C:\nexus-server.svn\dump\WorkSpace-NP21157-21164
 		"ip": "192.168.6.11",
 		"port": "8022",
 		"uid": "administrator",
-		"pwd": "ÃÜÂë",
+		"pwd": "å¯†ç ",
 		"dir_root": "c:/nexus-server.svn/Repositories/",
 		"svn_home": "g:/Program Files/TortoiseSVN/",
 		"dir_dump": "c:/nexus-server.svn/svn_dump/"
