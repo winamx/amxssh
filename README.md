@@ -13,13 +13,13 @@
 
 ## 二、使用方法
 
-###2.1 下载脚本解析器: [AmxSSH-0.2.1.exe](download/amxssh-0.2.1/AmxSSH-0.2.1.exe "AmxSSH-0.2.1.exe")
+### 2.1 下载脚本解析器: [AmxSSH-0.2.1.exe](download/amxssh-0.2.1/AmxSSH-0.2.1.exe "AmxSSH-0.2.1.exe")
 
 文件路径：download/amxssh-0.2.1/AmxSSH-0.2.1.exe
 
  
 
-###2.2 新建脚本文件 test`.amxssh`, 关联脚本执行程序, 后续双击执行。
+### 2.2 新建脚本文件 test`.amxssh`, 关联脚本执行程序, 后续双击执行。
 ![语言定义](images/amxssh2exe.png "语言定义")
 
 
