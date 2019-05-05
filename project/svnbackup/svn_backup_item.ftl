@@ -1,10 +1,16 @@
 
 <#setting locale="zh_CN"/>
 
-<#assign json_src><#include "svn.src.info.json" /></#assign>
+<#assign json_src>
+<#include "svn.src.info.json" />
+</#assign>
+
 <#assign src=json_src?eval />
 
-<#assign json_dest><#include "svn.dest.info.json" /></#assign>
+<#assign json_dest>
+<#include "svn.dest.info.json" />
+</#assign>
+
 <#assign dest=json_dest?eval /> 
 
 <#assign args_shell_src="os=\"${src.os}\", ip=\"${src.ip}\", port=${src.port}, uid=\"${src.uid}\", pwd=\"${src.pwd}\""
@@ -12,6 +18,7 @@
 		
 		args_shell_dest="os=\"${dest.os}\", ip=\"${dest.ip}\", port=${dest.port}, uid=\"${dest.uid}\", pwd=\"${dest.pwd}\""
 		args_sftp_dest = args_shell_dest
+						 
 	/>
 
 
@@ -42,13 +49,15 @@
 
 
 	//2.1 产生备份文件
-	//svnadmin dump . -r 21157:21164 --incremental  > x:/svnrootbak/db21157-21164		
+	//svnadmin dump . > x:/svnrootbak/dumpfile
+	//svnadmin dump . -r 21157:21164 --incremental  > x:/svnrootbak/dumpfile21157-21164
+		
 	
 	amxssh-shell(${args_shell_src}){	
 		//@echo off
 		echo "::amxssh::开始备份:${db}"
 		//生成dump目录
-		if not exist ${src.dir_dump} mkdir ${src.dir_dump}
+		if not exist ${src.dir_dump} mkdir ${src.dir_dump?replace("/","\\")}
 				
 		"${src.svn_home}bin/svnadmin.exe" dump ${src.dir_root}${db} -r <#noparse>${svn_ver_p}</#noparse> --incremental > ${src.dir_dump}${db}<#noparse>-${svn_ver_f}</#noparse>		
 		 
@@ -76,6 +85,7 @@
 		
 		echo "::amxssh::exit"
 	}
+
 
 <#noparse> </#if> </#noparse>
 	

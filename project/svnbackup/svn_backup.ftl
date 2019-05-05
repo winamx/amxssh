@@ -1,6 +1,9 @@
 <#setting locale="zh_CN"/>
 
-<#assign json_config><#include "svn_backup.json" /></#assign>
+<#assign json_config>
+<#include "svn_backup.json" />
+</#assign>
+
 <#assign config=json_config?eval />
 
 <#assign src=config.src dest=config.dest dbs=config.dbs >
@@ -11,6 +14,7 @@
 		
 		args_shell_dest="os=\"${dest.os}\", ip=\"${dest.ip}\", port=${dest.port}, uid=\"${dest.uid}\", pwd=\"${dest.pwd}\""
 		args_sftp_dest = args_shell_dest
+						 
 	/>
 
 
@@ -69,7 +73,7 @@ amxssh-file(name="svn.dest.info.json", io="write", charset="utf-8"){
 	//1.获取备份版本
 	amxssh-shell(${args_shell_dest}){	
 		//@echo off
-		if not exist ${dest.dir_dump} mkdir ${dest.dir_dump}
+		if not exist ${dest.dir_dump} mkdir ${dest.dir_dump?replace("/","\\")}
 		for /F %%i in ('"${dest.svn_home}bin/svnlook.exe" youngest ${dest.dir_root}${db}') do ( set VER_CUR=%%i)		
 		echo { "proj_name": "${db}", "ver_cur":%VER_CUR% } >${proj_name_dest}		
 		echo "::amxssh::exit"	
@@ -84,7 +88,7 @@ amxssh-file(name="svn.dest.info.json", io="write", charset="utf-8"){
 	//3.获取源版本
 	amxssh-shell(${args_shell_src}){	
 		//@echo off
-		if not exist ${src.dir_dump} mkdir ${src.dir_dump}
+		if not exist ${src.dir_dump} mkdir ${src.dir_dump?replace("/","\\")}
 		for /F %%i in ('"${src.svn_home}bin/svnlook.exe" youngest ${src.dir_root}${db}') do ( set VER_CUR=%%i)		
 		echo { "proj_name": "${db}", "ver_cur":%VER_CUR% } >${proj_name_src}		
 		echo "::amxssh::exit"	
